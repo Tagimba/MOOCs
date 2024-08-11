@@ -74,6 +74,7 @@ jobs:
           SOURCE_DIRECTORY=$SOURCE_DIRECTORY
 
           if [ -f "$SOURCE_DIRECTORY/tsconfig.json" ]; then
+            echo "tsconfig.json found in the current directory. Starting TypeScript transpilation."
             tsc -b && jsq doc:generate
           else
             echo "No tsconfig.json found in the current directory. Skipping TypeScript transpilation."
